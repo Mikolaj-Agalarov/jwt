@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Page</title>
+</head>
+<body>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #333; color: #fff; font-family: Arial, sans-serif;">
+  <div>
+    <a href="/register/newUser" style="color: #fff; text-decoration: none; display: flex; align-items: center;">
+      <i class="fas fa-appUser-plus" style="margin-right: 5px;"></i>
+      Register
+    </a>
+  </div>
+  <div>
+    <a href="/login/loginUser" style="color: #fff; text-decoration: none; display: flex; align-items: center;">
+      <i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i>
+      Login
+    </a>
+  </div>
+  <div>
+    <a href="/users/users" style="color: #fff; text-decoration: none; display: flex; align-items: center;">
+      <i class="fas fa-bell" style="margin-right: 5px;"></i>
+      All Users
+    </a>
+  </div>
+</div>
+<div>
+  <h1>Register new user</h1>
+  <form method="post" action="/register/newUser" th:object="${user}">
+    <div>
+      <label>Username</label>
+      <input type="text" th:field="*{username}">
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" th:field="*{password}">
+    </div>    <div>
+    <label>Email</label>
+    <input type="email" th:field="*{email}">
+  </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+</body>
+</html>
